@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
+import { init } from './home.dashy';
 import { QuoteService } from './quote.service';
 
 @Component({
@@ -20,6 +21,9 @@ export class HomeComponent implements OnInit {
     this.quoteService.getRandomQuote({ category: 'dev' })
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((quote: string) => { this.quote = quote; });
+
+    const widget = init('vizPlaceholder');
+    widget.resize().render();
   }
 
 }

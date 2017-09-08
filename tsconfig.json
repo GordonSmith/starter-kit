@@ -16,7 +16,10 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@hpcc-js/*": ["../../hpcc-js/packages/*"]
+    }
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": false
