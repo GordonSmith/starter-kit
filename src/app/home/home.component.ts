@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
+import { init } from './home.dashy';
 import { QuoteService } from './quote.service';
 
 @Component({
@@ -26,5 +27,8 @@ export class HomeComponent implements OnInit {
       .subscribe((quote: string) => {
         this.quote = quote;
       });
+
+    const widget = init('vizPlaceholder');
+    widget.resize().render();
   }
 }
